@@ -1,0 +1,98 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Trivia</title>
+  </head>
+  <body>
+    
+    <div class="contenedor">
+      <img src="https://static8.depositphotos.com/1002927/1069/i/600/depositphotos_10690938-stock-photo-no-idea.jpg" alt="">
+      
+      <div class="texto-encima">
+        <h1>TRIVIA</h1>
+        <form  class="transparente" action="" id="triviaForm">
+          <div class="items">
+            <label for="amount">Número de preguntas:</label>
+          </div>
+          <div>
+            <input class="controls" type="text" id="amount" value="0" />
+          </div>
+          <div class="items">
+            <label for="category">Categotia</label>
+          </div>
+          <div class="custom-select">
+            <select name="" id="category">
+              <option value="0">Cualquier categoría</option>
+              <option value="9">Cultura general</option>
+              <option value="10">Libros</option>
+              <option value="11">Películas</option>
+              <option value="12">Música</option>
+              <option value="13">Musicales y teatros</option>
+              <option value="14">Televisión</option>
+              <option value="15">Videojuegos</option>
+              <option value="16">Juegos de mesa</option>
+              <option value="17">Ciencia y naturaleza</option>
+              <option value="18">Computación</option>
+              <option value="19">Matemáticas</option>
+              <option value="20">Mitología</option>
+              <option value="21">Deportes</option>
+              <option value="22">Geografía</option>
+              <option value="23">Historia</option>
+              <option value="24">Política</option>
+              <option value="25">Arte</option>
+              <option value="26">Celebridades</option>
+              <option value="27">Animales</option>
+              <option value="28">Autos</option>
+              <option value="29">Comics</option>
+              <option value="30">Gadgets</option>
+              <option value="31">Ánime y manga</option>
+              <option value="32">Caricaturas</option>
+            </select>
+          </div>
+          <div class="items">
+            <label for="difficulty">Dificultad:</label>
+            </div>
+          <div class="custom-select">
+            <select name="" id="difficulty">
+              <option value="0">Any difficulty</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <div class="items">
+            <label for="type">Tipo de pregunta:</label>
+          </div>
+            <div class="custom-select">
+            <select name="" id="type">
+              <option value="0">Any type</option>
+              <option value="boolean">True/false</option>
+              <option value="multiple">Multiple Choice</option>
+            </select>
+          </div>
+      
+          <div class="buttonSubmit">
+            <input class="botons" type="submit" value="Empezar !" id="formButton" />
+          </div>
+          
+        </form>
+          <div id="question-container" class="margin-top transparente">
+          </div>
+          <div id="game" >
+
+          </div>
+
+      </div>
+    </div>
+    
+    <!--
+    <script src="main.js"></script>-->
+    <script src="select.js"></script>
+    <script src="jsascync.js"></script>
+  </body>
+</html>
+
