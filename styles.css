@@ -8,10 +8,6 @@
   left: 15px;
 
 }
-.image{
-  width: 15px;
-  height: 15px;
-}
 img{
     /* Rellenamos el fondo */
     min-height: 100%;
@@ -26,9 +22,18 @@ img{
     top: 0;
     left: 0;
 }
+@media(max-width: 550px){
+  .md-col-12-img{
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 70px;
+  }
+}
+
 .transparente{
   opacity: 0.8;
-  }
+}
 .contenedor{
   display: inline-block;
   width: 100%;
@@ -60,6 +65,11 @@ form{
     border-radius: 10px;
     border-style: solid;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media(max-width: 550px){
+    .md-col-12{
+      width: 80%;
+    }
 }
 
 
@@ -182,7 +192,6 @@ form{
 }
 .preguntas{
   display: block;
-  height: 50px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -199,7 +208,7 @@ span{
 .gameover{
   background: black;
   text-align: center;
-  color: red;
+  color: rgb(255, 0, 0);
   width: 100%;
   height: 200px;
 
@@ -223,6 +232,14 @@ span{
   color: #ffffff;
   display: inline-grid;
 }
+@media(max-width: 550px){
+  .md-col-12-img2{
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+  }
+}
 .puntuacion{
   position: relative;
   display: block;
@@ -232,9 +249,22 @@ span{
   background: black;
   color: #fff;
 }
-img.resize 
-{
-  margin: auto;
-width: 10px;
-height: 10px;
+
+.botones{
+  width: max-content;
+  background: rgb(126, 128, 0);
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 2px;
+  font-size: 16px;
+}
+.botonesError{
+  width: max-content;
+  background: rgb(255, 0, 0);
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 2px;
+  font-size: 16px;
 }

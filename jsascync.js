@@ -17,6 +17,7 @@
 let formQuestion = document.getElementById("triviaForm");
 let container = document.getElementById("question-container");
 let gameOver = document.getElementById("game");
+let imagen = document.getElementById("myimageDiv");
 
 let questions;
 let q = 0;
@@ -56,24 +57,31 @@ const fillQuestions = questionsAPI => {
 };
 
 const showQuestions = () => {
-    //contador();
-    
+    contador();
+ 
     correctAnswer = questions[q].correct_answer;
     console.log(correctAnswer)
     incorrectAnswer = questions[q].incorrect_answers;
     console.log(incorrectAnswer)
-    //array1 = questions[q].incorrect_answers;
-    //array2 = questions[q].correct_answer;
     if (questions[q].incorrect_answers.length > 1) { 
+      let intervalo = setInterval(() => {
+        if(counter !== max) {
+           counter--
+            console.log(counter)
+            console.log(intervalo)
+        } else {
+          clearInterval(intervalo)
+        }
+       }, 1000)
       array3 = incorrectAnswer.concat(correctAnswer);
       console.log(array3[0])
-      array3.sort(() => Math.random());
+      array3.sort(() => Math.random()-0.5);
       console.log((array3)) 
       console.log(array3[0]) 
       container.innerHTML = `
       <div class="prueba">
         <h2 class="preguntas">${questions[q].question}</h2>
-        
+        <p>${counter}</p>
         <ul>
           <li><button class="boton" onClick="handleCheckAnswer(this)">${
             array3[0]
@@ -97,7 +105,6 @@ const showQuestions = () => {
       array3.sort(() => Math.random()-0.5);
       console.log((array3)) 
       console.log(array3[0])
-      console.log("son boolenado")
       container.innerHTML = `
       <div class="prueba">
         <h2 class="preguntas">${questions[q].question}</h2>
@@ -119,9 +126,14 @@ const showQuestions = () => {
   const handleCheckAnswer = button => {
     if (button.innerText === correctAnswer) {
        score++;
+       button.classList.add('botones')
+       button.appendChild(button)
+      //innerHTML=`<button class="botones" onClick="handleCheckAnswer(this)">`;
+       //container.innerHTML=`<img src="https://cdn.pixabay.com/photo/2017/03/28/01/46/check-mark-2180770_960_720.png" alt="cargando..." />`
+      console.log(button);
 
-      console.log("Correcto");
-    } else {
+    }else {
+  
       console.log("Incorrecto");
     }
   
@@ -132,9 +144,7 @@ const showQuestions = () => {
       gameOver.innerHTML =`  
      <div>   
       <div class="content">
-        <div class="text">
-        <img src="https://image.freepik.com/vector-gratis/juego-terminado-efecto-falla_225004-661.jpg"/>
-        </div>
+        <img class="md-col-12-img2" src="https://image.freepik.com/vector-gratis/juego-terminado-efecto-falla_225004-661.jpg"/>
         <div class="puntuacion"> 
         <h3>Acertaste: ${score} preguntas de ${questions.length}</h3>
         
