@@ -40,12 +40,10 @@ const fillQuestions = questionsAPI => {
 
 const showQuestions = () => {
     correctAnswer = questions[q].correct_answer;
-    console.log(correctAnswer)
     incorrectAnswer = questions[q].incorrect_answers;
     if (questions[q].incorrect_answers.length > 1) { 
       array3 = incorrectAnswer.concat(correctAnswer);
       array3.sort(() => Math.random()-0.5);
-      console.log((array3)) 
       container.innerHTML = `
       <div class="prueba">
         <h2 class="preguntas">${questions[q].question}</h2>
